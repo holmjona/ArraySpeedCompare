@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@Model.Message
+<h1>Building strings in Code</h1>
+<form method="post">
+    <div>
+        <label for="txtString">String:</label>
+        <input id="txtString" asp-for="@Model.AppendString" />
+    </div>
+    <div>
+        <label>Repeat Count:</label>
+        <input id="txtRepeats" asp-for="@Model.RepeatCount" />
+    </div>
+    <div>
+        <input type="submit" value="Go" onclick="startWheel(this)" />
+        <img id="wheel1" src="~/images/wheel1.gif" style="visibility:hidden" />
+    </div>
+</form>
+<h2>Times</h2>
+<dl>
+    <dt>Array</dt>
+    <dd>Took: @Model.ArrayTime</dd>
+    <dd>@Model.fromArray</dd>
+    <dt>List</dt>
+    <dd>Took: @Model.ListTime</dd>
+    <dd>@Model.fromList</dd>
+</dl>
+
+
+
+
