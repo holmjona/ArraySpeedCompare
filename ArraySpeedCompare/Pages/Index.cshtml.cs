@@ -27,6 +27,16 @@ namespace ArraySpeedCompare.Pages {
                 Message = "Error, repeat count could not be parsed. Used 10.";
                 count = 10;
             }
+            if (count < 1)
+            {
+                Message = "Repeat count must be greater than 0.";
+                count = 1;
+            }
+            if (count > 10000000)
+            {
+                Message = "Cannot repeat more than 10 million times.";
+                count = 10000000;
+            }
             DateTime startArray = DateTime.Now;
             for (int i = 0; i < count; i++) {
                 fromArray += str;
